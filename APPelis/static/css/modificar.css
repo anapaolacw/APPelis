@@ -1,0 +1,230 @@
+/** Your theme modifications here **/
+.contenedor-form{
+	padding-top: 3%;
+	padding-bottom: 3%;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+.titulos{
+	text-align: center;
+}
+.upload-btn-wrapper {
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: inline-block;
+
+}
+.a{
+	color: #FF0082;
+}
+.btn-primary{
+	background-color: #FF0082;
+	border-color:#E60A86;
+}
+.tituloVideo{
+	margin-bottom: 5%;
+}
+.subtitulo{
+	margin-bottom: 2%
+}
+.videoAgrandado{
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 100%;
+}
+.labelVisto{
+	text-align:center;
+	float: right;
+	font-size: 13px;
+}
+.campoArchivo{
+	color:black;
+}
+.error{
+    color: red;
+    text-align: center;
+}
+.imagen{
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	width: 100%;
+	max-width: 180px;
+	border:1px solid darkgray;
+}
+.input-group{
+	width:80%;
+}
+.tipoSubir{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-transform: initial;
+}
+.tipoSubirActivo{
+	color:#ffabd7;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-transform: initial;
+}
+.navbar{
+	min-height:0;
+}
+.tamTipo{
+	width:25%;
+}
+#items{
+	height:100%; 
+	margin-bottom:5%
+}
+.selector{
+	height: 100%;
+}
+.contenedor{
+	margin-bottom: 5%;
+	padding: 6px 12px;
+}
+.linea{
+	border: 1px solid #ccc;
+	padding: 0 20px;
+	margin-top: 38px;
+	margin-bottom: 20px;
+}
+.botonInvisible{
+	display: none;
+}
+.contenedorArchivo{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 3%;
+}
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+.panel-side-body {
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 10px;
+  }
+#btnNuevaCarpeta{
+	margin-top:15px;
+}
+.barraLateral{
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+.barraLateral > li > a{
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	
+}
+.lista-lateral{
+	padding-left: 4%;
+	margin: 6%;
+}
+.lista-lateral > li {
+	margin-bottom: 2%;
+}
+.lista-lateral > .carpetaPrincipal {
+    margin-bottom: 8%;
+	background-color: #FF0082;
+	padding: 5%;
+}
+.lista-lateral > .carpetaPrincipal > a{
+	text-transform: uppercase;
+	font-weight: bold;
+    padding-right: 5%;
+	color: #ffffff;
+}
+.lista-lateral > .subCarpeta > a{
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 18%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	padding-right: 6%;
+	color: #999999;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #ffffff;
+    background-color: #FF0082;
+}
+.nav-pills > li > a, .nav-pills > li > a:hover, .nav-pills > li > a:focus {
+    color:#FF0082;
+}
+.compartirDiv{
+	display:inline;
+}
+.lineaCompartida {
+    width: 100%;
+    margin:0 auto;
+    overflow:hidden;/*contain child floats*/
+}
+
+.contenedorEtiqueta{
+	text-align: center;
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+}
+#panelNuevaCarpeta{
+	margin-top: 7%;
+	margin-left: 10%;
+	margin-right: 10%;
+	width:80%
+}
+.mensajeError{
+	padding:3%;
+	color:red;
+	text-align: center;
+	margin-bottom: -5%;
+}
+#selectorCarpetas{
+	width: 80%;
+	margin-bottom: 5%;
+}
+.home{
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.postmeta {
+    float: right;
+}
+.color_gray {
+    color: #777;
+}
+.postdate {
+    float: right;
+    padding: 6px 8px 8px;
+    margin-top: 15px;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: normal;
+}
+.bg-lightgray {
+    background: #f2f2f2;
+    background: rgba(0, 0, 0, 0.05);
+}
+.postdate span {
+    display: block;
+    font-size: 24px;
+}
+.products{
+	display: flex;
+	flex-wrap: wrap;
+}
+.portada{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,45 @@
+{% extends 'peliculas.html' %}
+{% block opciones %}
+	<li><a href="/peliculas">Peliculas</a></li>
+  	<li class="active"><a href="/agregarPelicula">Agregar Pelicula</a></li>
+  	<li><a href="/cerrar" >Cerrar sesion</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+    <h1>Modificar peliculas</h1>
+
+    <div class="pull-left">
+        <a href="/pelicula/{{idPelicula}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Regresar</a>
+    </div>
+    <div class="contenedor-form">
+        {% if error %}
+        <div style="color:red">{{ error }}</div>
+        {% endif %}
+        <form method="post" action="/modificarPelicula/{{idPelicula}}/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Titulo</label>
+                <input required="required"  class="form-control" type="text" name="titulo" value="{{valores.titulo}}">
+            </div>
+            <div class="form-group">
+                <label for="id_sinopsis">Sinopsis</label>
+                <textarea required="required"  id="id_sinopsis" name="sinopsis" class="form-control" cols="40">{{valores.sinopsis}}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Fecha de estreno</label>
+                <input required="required"  class="form-control" type="date" value="{{valores.fechaEstreno}}" name="fechaEstreno">
+            </div>
+            <div class="form-group">
+                <label>Poster</label>
+                <input required="required"  class="form-control" type="file" name="poster" src="{{valores.poster}}" accept="image/*">
+            </div>
+             
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Modificar</button>
+            </div>
+        </form>
+		</div>
+    </div>
+{% endblock %}
+

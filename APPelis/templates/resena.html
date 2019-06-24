@@ -1,0 +1,32 @@
+{% extends 'detalles.html' %}
+
+{% block regresar %}
+    <a href="/pelicula/{{pelicula.id}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Regresar</a>
+{% endblock%}
+
+{% block resena %}
+    <h3 class="titulos">Agregar reseña</h3>
+    <div style="margin: 5%;">
+        {% if error %}
+        <div style="color:red">{{ error }}</div>
+        {% endif %}
+        {%if pelicula%}
+        <form  method="post" action="/agregarResena/{{pelicula.id}}/">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-2 text-center">
+                    <img style="width:100px; margin-top: -20px;" src="../../static/img/comillas.png">
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <textarea required="required" id="resena" name="resena"class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Enviar reseña</button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block opciones %}
+	<li  class="active"><a href="/peliculas">Peliculas</a></li>
+  	<li><a href="/agregarPelicula">Agregar Pelicula</a></li>
+  	<li><a href="/cerrar" >Cerrar sesion</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <div class="box">
+    <h1>Peliculas</h1>
+    {% if error %}
+        <div style="color:red">{{ error }}</div>
+    {% endif %}
+    {% if exito %}
+        <div style="color:blue">{{ exito }}</div>
+    {% endif %}
+    {% if not peliculas %}
+    <h3 class="titulos"> No hay peliculas</h3>
+    {% endif %}
+    <div class="row products">
+        {% for pelicula in peliculas %}
+        <div class="col-md-6 col-sm-12" style="border: solid 1px #e6e6e6;">
+        <a href="/pelicula/{{pelicula.id}}">                
+            <div class="postmeta color_gray">
+            <div class="postdate bg-lightgray headerfont">
+                <span class="postday">{{pelicula.dia}}</span>{{pelicula.mes}}-{{pelicula.anio}}				                        	
+            </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-12">
+            <img id="{{pelicula.id}}" class="imagen" src="../static/img/{{pelicula.poster}}">
+            </div>
+            <div class="col-md-6 col-sm-12">
+            <div class="text">
+                <h3>{{pelicula.titulo}}</h3>
+                <p class="campoArchivo">{{pelicula.sinopsis}}</p>
+            </div>
+            </div>
+        </a>
+        </div>
+        {% endfor %}
+        <div class="col-md-4 col-sm-6 text-center" style="margin-top: 2%">
+            <a href="/agregarPelicula/">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar pelicula</button>
+            </a>
+        </div>
+    </div> 
+{%endblock%}

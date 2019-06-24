@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- STYLES -->
+  {% load static%}
+  <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/modificar.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.default.css' %}" type="text/css" id="theme-stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+  <title>APPelis </title>
+</head>
+<body>
+
+<!-- *** NAVBAR ***-->
+<div class="navbar navbar-default yamm" role="navigation" id="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand home" href="/home">
+          <img src="{% static 'img/logo.png' %}" alt="APPelis logo" class="hidden-xs">
+          <img src="{% static 'img/logo.png' %}" alt="APPelis logo sm" class="visible-xs"><span class="sr-only">MyDoc - homepage</span>
+      </a>
+      <div class="navbar-collapse collapse" id="navigation">
+        <ul class="nav navbar-nav navbar-left">
+          {% block opciones %}
+          <li class="active"><a href="/peliculas" >Peliculas</a></li>
+          <li><a href="/iniciar" >Iniciar sesion</a></li>
+          <li><a href="/registrar" >Crear una cuenta</a></li>
+          {% endblock %}
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+      <div class="navbar-buttons">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-align-justify"></i>
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- *** CONTENIDO *** -->
+
+<div id="all">
+  <div id="content">
+    <div class="container">
+      {% block content %}
+      <div class="box">
+        <h1>Peliculas</h1>
+        {% if not peliculas %}
+        <h3 class="titulos"> No hay peliculas</h3>
+        {% endif %}
+        <div class="row products">
+          {% for pelicula in peliculas %}
+          <div class="col-md-6 col-sm-12" style="border: solid 1px #e6e6e6;">
+            <a href="/pelicula/{{pelicula.id}}">                
+              <div class="postmeta color_gray">
+                <div class="postdate bg-lightgray headerfont">
+                  <span class="postday">20</span>Jun 2019				                        	
+                </div>
+              </div>
+              
+              <div class="col-md-4 col-sm-12">
+                <img id="{{pelicula.id}}" class="imagen" src="../static/img/{{pelicula.poster}}">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="text">
+                  <h3>{{pelicula.titulo}}</h3>
+                  <p class="campoArchivo">{{pelicula.sinopsis}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+
+      </div> 
+      {%endblock%}
+    </div>
+  </div>
+</div>
+
+<!-- *** SCRIPTS  ***-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-hover-dropdown.js' %}"></script>
+  <script src="{% static 'js/modificar.js' %}"></script>
+  {% block scriptsExtraUsuario%}
+  {% endblock %}
+</body>
+</html>
