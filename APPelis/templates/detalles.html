@@ -17,13 +17,12 @@
         <h1 class ="titulos">{{pelicula.titulo}}</h1>
         <div class="products">                
             <div class="col-md-4 col-sm-12">
-                <img id="{{pelicula.id}}" class="imagen" src="../../static/img/{{pelicula.poster}}">
+                <img id="{{pelicula.id}}" class="imagen" src="../media/{{pelicula.poster}}">
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="text">
                     <p class="campoArchivo">{{pelicula.sinopsis}}</p>
                 </div>
-                {% if logueado %}
                 <div class="text-center"style="margin-top: 5%">
                     <a href="/modificarPelicula/{{pelicula.id}}">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Modificar</button>
@@ -32,7 +31,6 @@
                         <button type="submit" class="btn btn-primary"><i class="fa fa-ban"></i> Eliminar</button>
                     </a>
                 </div>
-                {% endif %}
             </div>
         </div>
         {% block resena %}
@@ -50,13 +48,11 @@
                 </div>
             </div>
             {% endfor %}
-            {% if logueado %}
             <div class="col-md-4 col-sm-6 text-center" style="margin-top: 2%">
                 <a href="/agregarResena/{{pelicula.id}}">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar reseña</button>
                 </a>
             </div>
-            {% endif%}
         {% endblock%}
         {%else%}
         <h4 class ="titulos">Pelicula no seleccionada</h4>

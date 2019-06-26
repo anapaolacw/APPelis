@@ -1,3 +1,6 @@
 from django.contrib import admin
+from app.models import Usuario, Pelicula, Resena
 
-# Register your models here.
+admin.site.register(Usuario)
+admin.site.register(Pelicula)
+admin.site.register(Resena)

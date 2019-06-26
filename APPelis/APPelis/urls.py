@@ -18,6 +18,10 @@ from django.urls import path
 from django.conf.urls import url
 from app.views import *
 
+#imports para imagenes
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^home/', verPeliculas),
@@ -30,4 +34,5 @@ urlpatterns = [
     url(r'^agregarResena/(?P<idPelicula>\d+)/$', agregarResena),
     url(r'^pelicula/(?P<idPelicula>\d+)/$', detallePelicula),
     url(r'^cerrar/', cerrar),
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

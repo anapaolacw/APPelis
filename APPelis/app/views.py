@@ -9,6 +9,7 @@ from APPelis.settings import SERVER_URL, SERVER_URL_MEDIA
 #Import para encriptar las contrasenas
 import crypt
 
+from app.models import *
 """ 
     METODOS DE USUARIO
         1. iniciar
@@ -165,6 +166,9 @@ def agregarPelicula(request):
         if respuesta != "error":
             if (respuesta['tipo'] == 1):
                 mensaje = 'Datos de pelicula validos'
+                pelicula = Pelicula(poster = poster)
+                pelicula.save()
+                print("Guardado en esta bd")
                 return redirect("/peliculas/")
             else:
                 return render(request, 'agregarPelicula.html', {'error':'Error al registrar pelicula', 'status': 0})
@@ -177,9 +181,14 @@ def agregarPelicula(request):
 """ 
 def verPeliculas(request):
     respuesta = serverEnviar("", "", "/obtenerPeliculas/", 1)
+
     if (respuesta != "error"):
         if (respuesta['tipo'] == 1):
-            peliculas = respuesta['peliculas']
+            peliculas = respuesta['peliculas']    
+            for peli in peliculas:
+                print("P: ",peli['poster'])
+            print("Valor logueado ")
+            print(request.session['logueado'])
             if request.session['logueado'] == True:
                 print("Estaba alguien")
                 return render(request, 'peliculas.html',{'peliculas': peliculas})

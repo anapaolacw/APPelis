@@ -76,6 +76,9 @@ def obtenerPeliculas(request):
             anio = str(peli.fechaEstreno)[0:4]
             mes = str(peli.fechaEstreno)[5:7]
             dia = str(peli.fechaEstreno)[8:10]
+            #rutaPeli = os.path.join(settings.MEDIA_ROOT, str(peli.poster))
+            print("Pelis rutas")
+            print(str(peli.poster))
             listaPelis.append({'titulo': peli.titulo, 'sinopsis': peli.sinopsis, 'poster': str(peli.poster), 'fechaEstreno': peli.fechaEstreno,'id':peli.id, 'anio': anio, 'mes': mes, 'dia': dia})
         data = {'peliculas': listaPelis, 'tipo': 1}
     return JsonResponse(data)
